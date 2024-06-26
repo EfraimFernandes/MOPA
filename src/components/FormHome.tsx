@@ -2,11 +2,13 @@
 
 import React, { useState, useEffect } from 'react';
 import styles from "./FormHome.module.css";
+import { useRouter } from 'next/navigation';
 
 const FormHome: React.FC = () => {
     const [currentTime, setCurrentTime] = useState<string>("");
     const [isPresencial, setIsPresencial] = useState<boolean>(false);
     const [isHovered, setIsHovered] = useState<string | null>(null);
+    const router = useRouter();
 
     const handleHover = (button: string) => {
         setIsHovered(button);
@@ -29,6 +31,10 @@ const FormHome: React.FC = () => {
 
     const handlePresencialChange = () => {
         setIsPresencial(!isPresencial);
+    };
+
+    const handleEntrarClick = () => {
+        router.push('/interno');
     };
 
     return (
@@ -72,6 +78,7 @@ const FormHome: React.FC = () => {
                     className={`${styles.Entrar} ${styles.Button} ${isHovered === 'MarcarPonto' ? styles.Hovered : ''}`}
                     onMouseEnter={() => handleHover('Entrar')}
                     onMouseLeave={() => handleLeave()}
+                    onClick={handleEntrarClick}
                 >
                     Entrar no Sistema
                 </button>

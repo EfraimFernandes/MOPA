@@ -1,0 +1,55 @@
+.Header{
+    background-color: #430A5D;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    height: 110px;
+}
+
+.LogoTitle{
+    max-width: 40%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.HeaderText{
+    font-size: 2rem;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 100;
+}
+
+.HamburgerMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    background-color: #4B0082;
+    border-radius: 50%;
+    z-index: 100;
+}
+
+.Bar {
+    width: 40px;
+    height: 4px;
+    background-color: #fff;
+    transition: all 0.4s ease;
+    margin:5px;
+}
+
+.TopBarOpen {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.MiddleBarOpen {
+    opacity: 0;
+}
+
+.BottomBarOpen {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
