@@ -1,15 +1,20 @@
 import React from 'react';
 import styles from './CurvedNavbar.module.css';
 
-const CurvedNavbar: React.FC<{ isOpen: boolean }> = ({ isOpen }) => {
+interface CurvedNavbarProps {
+    isOpen: boolean;
+    toggleMenu: () => void;
+}
+
+const CurvedNavbar: React.FC<CurvedNavbarProps> = ({ isOpen, toggleMenu }) => {
     return (
         <div className={`${styles.Navbar} ${isOpen ? styles.Open : ''}`}>
             <ul className={styles.NavList}>
-                <li className={styles.NavItem}><a href="/interno">Resumo</a></li>
-                <li className={styles.NavItem}><a href="/interno#historico">Histórico</a></li>
-                <li className={styles.NavItem}><a href="/interno#senha">Alter. Senha</a></li>
-                <li className={styles.NavItem}><a href="/interno#nu">New User</a></li>
-                <li className={styles.NavItem}><a href="/">Sair</a></li>
+                <li className={styles.NavItem}><a href="#resumo" onClick={toggleMenu}>Resumo</a></li>
+                <li className={styles.NavItem}><a href="#historico" onClick={toggleMenu}>Histórico</a></li>
+                <li className={styles.NavItem}><a href="#senha" onClick={toggleMenu}>Alter. Senha</a></li>
+                <li className={styles.NavItem}><a href="#nu" onClick={toggleMenu}>New User</a></li>
+                <li className={styles.NavItem}><a href="/" onClick={toggleMenu}>Sair</a></li>
             </ul>
         </div>
     );
