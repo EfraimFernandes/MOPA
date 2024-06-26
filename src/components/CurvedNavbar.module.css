@@ -1,0 +1,49 @@
+.Navbar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background: #4B0082;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: right 1s ease, border-radius 1s ease, transform 1s ease;
+    border-top-left-radius: 150%;
+    border-bottom-left-radius: 150%;
+    transform: translateX(100%);
+    padding: 20px;
+    z-index: 10;
+}
+
+.Navbar.Open {
+    right: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    transform: translateX(0%);
+}
+
+.NavList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: left;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 100;
+}
+
+.NavItem {
+    margin: 30px 0;
+}
+
+.NavItem a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.NavItem a:hover {
+    color: #aaa;
+}

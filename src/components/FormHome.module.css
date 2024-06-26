@@ -92,7 +92,7 @@
 }
 
 .Hovered {
-    filter: blur(3px);
+    filter: blur(1.5px);
 }
 
 .MarcarPonto {
